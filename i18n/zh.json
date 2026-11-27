@@ -61,5 +61,7 @@
   "tool.mock.note": "这只是演示。真实抽奖请打开工具。",
   "contact.title": "有想法？鹅在听。",
   "contact.lead": "合作洽谈、媒体咨询，以及玩家和工具用户的反馈，欢迎写信给我们。",
-  "footer.rights": "保留所有权利。"
+  "footer.rights": "保留所有权利。",
+  "footer.privacy": "隐私政策",
+  "footer.privacyHref": "/en/privacy/"
 }

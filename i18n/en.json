@@ -61,5 +61,7 @@
   "tool.mock.note": "This is a demo. Open the tool for a real giveaway.",
   "contact.title": "Got an idea? The goose is listening.",
   "contact.lead": "Write to us about partnerships, press, and feedback from players and tool users.",
-  "footer.rights": "All rights reserved."
+  "footer.rights": "All rights reserved.",
+  "footer.privacy": "Privacy Policy",
+  "footer.privacyHref": "/en/privacy/"
 }

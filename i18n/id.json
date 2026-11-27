@@ -61,5 +61,7 @@
   "tool.mock.note": "Ini hanya demo. Buka alatnya untuk giveaway sungguhan.",
   "contact.title": "Punya ide? Si angsa mendengarkan.",
   "contact.lead": "Hubungi kami untuk kerja sama, pers, serta masukan dari pemain dan pengguna alat kami.",
-  "footer.rights": "Hak cipta dilindungi undang-undang."
+  "footer.rights": "Hak cipta dilindungi undang-undang.",
+  "footer.privacy": "Kebijakan Privasi",
+  "footer.privacyHref": "/en/privacy/"
 }

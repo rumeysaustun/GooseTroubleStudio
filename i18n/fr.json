@@ -61,5 +61,7 @@
   "tool.mock.note": "Ceci est une démo. Ouvrez l’outil pour un vrai tirage.",
   "contact.title": "Une idée ? L’oie vous écoute.",
   "contact.lead": "Écrivez-nous pour les partenariats, la presse et les retours des joueurs et des utilisateurs de l’outil.",
-  "footer.rights": "Tous droits réservés."
+  "footer.rights": "Tous droits réservés.",
+  "footer.privacy": "Politique de confidentialité",
+  "footer.privacyHref": "/en/privacy/"
 }

@@ -61,5 +61,7 @@
   "tool.mock.note": "Esto es una demo. Abre la herramienta para un sorteo real.",
   "contact.title": "¿Tienes una idea? El ganso te escucha.",
   "contact.lead": "Escríbenos para colaboraciones, prensa y comentarios de jugadores y usuarios de la herramienta.",
-  "footer.rights": "Todos los derechos reservados."
+  "footer.rights": "Todos los derechos reservados.",
+  "footer.privacy": "Política de privacidad",
+  "footer.privacyHref": "/en/privacy/"
 }

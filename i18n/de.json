@@ -61,5 +61,7 @@
   "tool.mock.note": "Das ist eine Demo. Öffne das Tool für ein echtes Gewinnspiel.",
   "contact.title": "Eine Idee? Die Gans hört zu.",
   "contact.lead": "Schreib uns für Kooperationen, Presseanfragen sowie Feedback von Spielern und Tool-Nutzern.",
-  "footer.rights": "Alle Rechte vorbehalten."
+  "footer.rights": "Alle Rechte vorbehalten.",
+  "footer.privacy": "Datenschutz",
+  "footer.privacyHref": "/en/privacy/"
 }

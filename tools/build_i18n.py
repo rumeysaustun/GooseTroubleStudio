@@ -45,6 +45,9 @@ LANGUAGES = [
     ("zh", "中文", "zh_CN", "ltr"),
 ]
 
+# Üreteç dışında elle yazılan, site haritasına girecek sayfalar.
+EXTRA_PAGES = ["gizlilik/", "en/privacy/"]
+
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
              "link", "meta", "source", "track", "wbr"}
 
@@ -211,9 +214,8 @@ def render(source: str, code: str, strings: dict[str, str], missing: set[str]) -
 
 
 def sitemap() -> str:
-    urls = "\n".join(
-        f"  <url><loc>{SITE_URL}{page_path(code)}</loc></url>" for code, *_ in LANGUAGES
-    )
+    paths = [page_path(code) for code, *_ in LANGUAGES] + EXTRA_PAGES
+    urls = "\n".join(f"  <url><loc>{SITE_URL}{path}</loc></url>" for path in paths)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             f"{urls}\n</urlset>\n")

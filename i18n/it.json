@@ -61,5 +61,7 @@
   "tool.mock.note": "Questa è una demo. Apri lo strumento per un giveaway reale.",
   "contact.title": "Hai un’idea? L’oca ti ascolta.",
   "contact.lead": "Scrivici per collaborazioni, stampa e feedback da giocatori e utenti dello strumento.",
-  "footer.rights": "Tutti i diritti riservati."
+  "footer.rights": "Tutti i diritti riservati.",
+  "footer.privacy": "Informativa sulla privacy",
+  "footer.privacyHref": "/en/privacy/"
 }

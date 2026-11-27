@@ -61,5 +61,7 @@
   "tool.mock.note": "Aceasta este o demonstrație. Deschide instrumentul pentru un giveaway real.",
   "contact.title": "Ai o idee? Gâsca ascultă.",
   "contact.lead": "Scrie-ne pentru colaborări, presă și feedback de la jucători și utilizatorii instrumentului.",
-  "footer.rights": "Toate drepturile rezervate."
+  "footer.rights": "Toate drepturile rezervate.",
+  "footer.privacy": "Politica de confidențialitate",
+  "footer.privacyHref": "/en/privacy/"
 }
