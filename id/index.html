@@ -193,16 +193,10 @@
         </header>
 
         <div class="games">
-          <!--
-            Kapaklar oyun görselleri gelene kadar CSS ile çizilir.
-            Görsel hazır olunca .game-card__cover içine <img> koyman yeterli.
-            Oyun adları ve kapak yazıları çevrilmez.
-          -->
+          <!-- Oyun adları çevrilmez. Oyun sayfaları (/dosya-021/, /afterlight/) şimdilik yalnızca Türkçe. -->
           <article class="game-card reveal">
-            <div class="game-card__cover game-card__cover--file" lang="tr" aria-hidden="true">
-              <span class="cover-file__label">Dosya</span>
-              <span class="cover-file__number">021</span>
-              <span class="cover-file__stamp">Gizli</span>
+            <div class="game-card__cover">
+              <img src="../assets/img/games/dosya-021/cover.webp" alt="" width="800" height="500" loading="lazy">
             </div>
             <div class="game-card__body">
               <span class="tag tag--live" data-i18n="games.status">Dalam pengembangan</span>
@@ -211,12 +205,13 @@
               <ul class="platforms" data-i18n-attr="aria-label:a11y.platforms" aria-label="Platform">
                 <li>Android</li>
               </ul>
+              <a class="game-card__link" href="/dosya-021/" data-i18n="games.more">Lihat game</a>
             </div>
           </article>
 
           <article class="game-card reveal">
-            <div class="game-card__cover game-card__cover--light" aria-hidden="true">
-              <span class="cover-light__title" lang="en">Afterlight</span>
+            <div class="game-card__cover">
+              <img src="../assets/img/games/afterlight/cover.webp" alt="" width="800" height="500" loading="lazy">
             </div>
             <div class="game-card__body">
               <span class="tag tag--live" data-i18n="games.status">Dalam pengembangan</span>
@@ -225,6 +220,7 @@
               <ul class="platforms" data-i18n-attr="aria-label:a11y.platforms" aria-label="Platform">
                 <li>Android</li>
               </ul>
+              <a class="game-card__link" href="/afterlight/" data-i18n="games.more">Lihat game</a>
             </div>
           </article>
 
