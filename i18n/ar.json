@@ -13,6 +13,7 @@
   "nav.games": "الألعاب",
   "nav.studio": "الاستوديو",
   "nav.tool": "أداة السحب",
+  "nav.blog": "المدونة",
   "nav.contact": "تواصل معنا",
   "nav.cta": "ابدأ سحبًا",
   "hero.eyebrow": "العب. حقّق. اكتشف.",
@@ -63,6 +64,8 @@
   "contact.title": "لديك فكرة؟ الإوزة تستمع.",
   "contact.lead": "راسلنا للشراكات والصحافة وملاحظات اللاعبين ومستخدمي الأداة.",
   "footer.rights": "جميع الحقوق محفوظة.",
+  "footer.press": "الملف الصحفي",
+  "footer.terms": "شروط الاستخدام",
   "footer.privacy": "سياسة الخصوصية",
   "footer.privacyHref": "/en/privacy/"
 }

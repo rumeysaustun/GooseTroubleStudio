@@ -13,6 +13,7 @@
   "nav.games": "游戏",
   "nav.studio": "工作室",
   "nav.tool": "抽奖工具",
+  "nav.blog": "博客",
   "nav.contact": "联系我们",
   "nav.cta": "开始抽奖",
   "hero.eyebrow": "游玩。调查。探索。",
@@ -63,6 +64,8 @@
   "contact.title": "有想法？鹅在听。",
   "contact.lead": "合作洽谈、媒体咨询，以及玩家和工具用户的反馈，欢迎写信给我们。",
   "footer.rights": "保留所有权利。",
+  "footer.press": "媒体资料",
+  "footer.terms": "使用条款",
   "footer.privacy": "隐私政策",
   "footer.privacyHref": "/en/privacy/"
 }

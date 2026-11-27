@@ -13,6 +13,7 @@
   "nav.games": "Spiele",
   "nav.studio": "Studio",
   "nav.tool": "Gewinnspiel-Tool",
+  "nav.blog": "Blog",
   "nav.contact": "Kontakt",
   "nav.cta": "Gewinnspiel starten",
   "hero.eyebrow": "Spielen. Ermitteln. Entdecken.",
@@ -63,6 +64,8 @@
   "contact.title": "Eine Idee? Die Gans hört zu.",
   "contact.lead": "Schreib uns für Kooperationen, Presseanfragen sowie Feedback von Spielern und Tool-Nutzern.",
   "footer.rights": "Alle Rechte vorbehalten.",
+  "footer.press": "Pressekit",
+  "footer.terms": "Nutzungsbedingungen",
   "footer.privacy": "Datenschutz",
   "footer.privacyHref": "/en/privacy/"
 }

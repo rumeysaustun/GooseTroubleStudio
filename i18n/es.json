@@ -13,6 +13,7 @@
   "nav.games": "Juegos",
   "nav.studio": "Estudio",
   "nav.tool": "Herramienta de sorteos",
+  "nav.blog": "Blog",
   "nav.contact": "Contacto",
   "nav.cta": "Hacer un sorteo",
   "hero.eyebrow": "Juega. Investiga. Descubre.",
@@ -63,6 +64,8 @@
   "contact.title": "¿Tienes una idea? El ganso te escucha.",
   "contact.lead": "Escríbenos para colaboraciones, prensa y comentarios de jugadores y usuarios de la herramienta.",
   "footer.rights": "Todos los derechos reservados.",
+  "footer.press": "Kit de prensa",
+  "footer.terms": "Términos de uso",
   "footer.privacy": "Política de privacidad",
   "footer.privacyHref": "/en/privacy/"
 }

@@ -13,6 +13,7 @@
   "nav.games": "Giochi",
   "nav.studio": "Studio",
   "nav.tool": "Strumento giveaway",
+  "nav.blog": "Blog",
   "nav.contact": "Contatti",
   "nav.cta": "Fai un giveaway",
   "hero.eyebrow": "Gioca. Indaga. Scopri.",
@@ -63,6 +64,8 @@
   "contact.title": "Hai un’idea? L’oca ti ascolta.",
   "contact.lead": "Scrivici per collaborazioni, stampa e feedback da giocatori e utenti dello strumento.",
   "footer.rights": "Tutti i diritti riservati.",
+  "footer.press": "Press kit",
+  "footer.terms": "Termini di utilizzo",
   "footer.privacy": "Informativa sulla privacy",
   "footer.privacyHref": "/en/privacy/"
 }

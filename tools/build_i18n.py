@@ -1,8 +1,13 @@
 """
-Dil sayfalarını üretir: index.html (Türkçe kaynak) + i18n/<kod>.json -> <kod>/index.html
+Sitenin üretilen parçalarını yazar:
+
+1. Dil sayfaları: index.html (Türkçe kaynak) + i18n/<kod>.json -> <kod>/index.html
+2. Alt sayfaların ortak header/footer'ı: tools/partials/<ad>.html, sayfadaki
+   <!-- partial:<ad>:start --> ... <!-- partial:<ad>:end --> arasına yazılır.
+3. sitemap.xml: dil sayfaları + bulunan tüm alt sayfalar (noindex olanlar hariç)
 
 Kullanım (proje kökünden):
-    python tools/build_i18n.py           # sayfaları üretir
+    python tools/build_i18n.py           # üretir
     python tools/build_i18n.py --check   # her şey güncel mi diye bakar, dosya yazmaz
 
 index.html hem kaynak hem de Türkçe sayfanın kendisidir. Betik onun yalnızca
@@ -45,8 +50,9 @@ LANGUAGES = [
     ("zh", "中文", "zh_CN", "ltr"),
 ]
 
-# Üreteç dışında elle yazılan, site haritasına girecek sayfalar.
-EXTRA_PAGES = ["dosya-021/", "afterlight/", "goose-exe/", "gizlilik/", "en/privacy/"]
+# Alt sayfa ararken atlanan klasörler ve ortak parçaların yeri.
+SKIP_DIRS = {".git", "brand", "tools", "node_modules"}
+PARTIALS = ROOT / "tools" / "partials"
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
              "link", "meta", "source", "track", "wbr"}
@@ -213,8 +219,34 @@ def render(source: str, code: str, strings: dict[str, str], missing: set[str]) -
     return page
 
 
-def sitemap() -> str:
-    paths = [page_path(code) for code, *_ in LANGUAGES] + EXTRA_PAGES
+def subpages() -> list[Path]:
+    """Elle yazılan alt sayfalar: kök ve üretilen dil sayfaları dışındaki tüm index.html'ler."""
+    codes = {code for code, *_ in LANGUAGES}
+    pages = []
+    for path in ROOT.rglob("index.html"):
+        parts = path.relative_to(ROOT).parts
+        if len(parts) == 1 or parts[0] in SKIP_DIRS:
+            continue
+        if len(parts) == 2 and parts[0] in codes:
+            continue  # üretilen dil sayfası
+        pages.append(path)
+    return sorted(pages)
+
+
+def with_partials(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    for partial in sorted(PARTIALS.glob("*.html")):
+        name = f"partial:{partial.stem}"
+        if f"<!-- {name}:start -->" in text:
+            text = replace_block(text, name, partial.read_text(encoding="utf-8").rstrip("\n"))
+    return text
+
+
+def sitemap(pages: list[Path]) -> str:
+    paths = [page_path(code) for code, *_ in LANGUAGES]
+    for page in pages:
+        if '<meta name="robots" content="noindex">' not in page.read_text(encoding="utf-8"):
+            paths.append(page.parent.relative_to(ROOT).as_posix() + "/")
     urls = "\n".join(f"  <url><loc>{SITE_URL}{path}</loc></url>" for path in paths)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -227,7 +259,9 @@ def main() -> int:
     check_only = "--check" in sys.argv[1:]
     source = (ROOT / "index.html").read_text(encoding="utf-8")
 
-    outputs: dict[Path, str] = {ROOT / "sitemap.xml": sitemap()}
+    pages = subpages()
+    outputs: dict[Path, str] = {ROOT / "sitemap.xml": sitemap(pages)}
+    outputs.update({page: with_partials(page) for page in pages})
     problems = []
 
     for code, *_ in LANGUAGES:

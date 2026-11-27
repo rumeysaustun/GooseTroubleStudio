@@ -13,6 +13,7 @@
   "nav.games": "Games",
   "nav.studio": "Studio",
   "nav.tool": "Giveaway Tool",
+  "nav.blog": "Blog",
   "nav.contact": "Contact",
   "nav.cta": "Run a giveaway",
   "hero.eyebrow": "Play. Investigate. Discover.",
@@ -63,6 +64,8 @@
   "contact.title": "Got an idea? The goose is listening.",
   "contact.lead": "Write to us about partnerships, press, and feedback from players and tool users.",
   "footer.rights": "All rights reserved.",
+  "footer.press": "Press kit",
+  "footer.terms": "Terms of use",
   "footer.privacy": "Privacy Policy",
   "footer.privacyHref": "/en/privacy/"
 }

@@ -13,6 +13,7 @@
   "nav.games": "Game",
   "nav.studio": "Studio",
   "nav.tool": "Alat Giveaway",
+  "nav.blog": "Blog",
   "nav.contact": "Kontak",
   "nav.cta": "Adakan giveaway",
   "hero.eyebrow": "Main. Selidiki. Temukan.",
@@ -63,6 +64,8 @@
   "contact.title": "Punya ide? Si angsa mendengarkan.",
   "contact.lead": "Hubungi kami untuk kerja sama, pers, serta masukan dari pemain dan pengguna alat kami.",
   "footer.rights": "Hak cipta dilindungi undang-undang.",
+  "footer.press": "Kit pers",
+  "footer.terms": "Ketentuan penggunaan",
   "footer.privacy": "Kebijakan Privasi",
   "footer.privacyHref": "/en/privacy/"
 }

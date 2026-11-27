@@ -13,6 +13,7 @@
   "nav.games": "Jocuri",
   "nav.studio": "Studio",
   "nav.tool": "Instrument de giveaway",
+  "nav.blog": "Blog",
   "nav.contact": "Contact",
   "nav.cta": "Fă un giveaway",
   "hero.eyebrow": "Joacă. Investighează. Descoperă.",
@@ -63,6 +64,8 @@
   "contact.title": "Ai o idee? Gâsca ascultă.",
   "contact.lead": "Scrie-ne pentru colaborări, presă și feedback de la jucători și utilizatorii instrumentului.",
   "footer.rights": "Toate drepturile rezervate.",
+  "footer.press": "Kit de presă",
+  "footer.terms": "Termeni de utilizare",
   "footer.privacy": "Politica de confidențialitate",
   "footer.privacyHref": "/en/privacy/"
 }
