@@ -312,7 +312,7 @@ h1, h2, h3 {
   transition: background-color 0.15s, color 0.15s;
 }
 .lang__option:hover { background: var(--surface-2); color: var(--cream); }
-.lang__option[aria-current="true"] { color: var(--orange); }
+.lang__option[aria-current="page"] { color: var(--orange); }
 
 /* ---------- 5. Hero ---------- */
 .hero {

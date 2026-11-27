@@ -5,7 +5,7 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
-  initI18n();
+  initLanguage();
   initHeader();
   initMobileNav();
   initReveal();
@@ -15,128 +15,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ==========================================================================
    Çoklu dil
-   Türkçe metinler HTML'de durur; diğer diller js/i18n/<kod>.js dosyalarında.
-   Bir dil dosyası yalnızca o dil seçildiğinde yüklenir.
+   Her dilin kendi sayfası var (/ Türkçe, /en/, /de/ …); sayfalar önceden çevrilmiş
+   gelir. Burada yalnızca dil menüsü ve hatırlanan dil seçimi yönetilir.
    ========================================================================== */
 
 const DEFAULT_LANG = "tr";
 const LANG_STORAGE_KEY = "gt-lang";
 
-/** Menüde görünen sıra; her dil kendi adıyla yazılır. */
-const LANGUAGES = [
-  { code: "ar", name: "العربية", dir: "rtl" },
-  { code: "de", name: "Deutsch" },
-  { code: "el", name: "Ελληνικά" },
-  { code: "en", name: "English" },
-  { code: "es", name: "Español" },
-  { code: "fr", name: "Français" },
-  { code: "id", name: "Bahasa Indonesia" },
-  { code: "it", name: "Italiano" },
-  { code: "pt", name: "Português" },
-  { code: "ro", name: "Română" },
-  { code: "ru", name: "Русский" },
-  { code: "tr", name: "Türkçe" },
-  { code: "zh", name: "中文" },
-];
+function initLanguage() {
+  const links = [...document.querySelectorAll("[data-lang-menu] a[hreflang]")];
+  if (!links.length) return;
 
-/** HTML'de karşılığı olmayan, yalnızca JS'in gösterdiği Türkçe metinler. */
-const JS_ONLY_STRINGS = {
-  "tool.mock.again": "Tekrar çek",
-};
-
-const locales = (window.GT_LOCALES = window.GT_LOCALES || {});
-let currentLang = DEFAULT_LANG;
-let latestLanguageRequest = 0;
-
-/** Anahtarın geçerli dildeki metni; eksikse Türkçesi. */
-function t(key) {
-  return locales[currentLang]?.[key] ?? locales[DEFAULT_LANG]?.[key] ?? "";
+  if (redirectToChosenLanguage(links)) return;
+  initLangSwitcher(links);
 }
 
-function initI18n() {
-  locales[DEFAULT_LANG] = { ...collectDefaultStrings(), ...JS_ONLY_STRINGS };
-  initLangSwitcher();
+/**
+ * Ana sayfaya (Türkçe) gelen biri daha önce başka bir dil seçtiyse o dilin sayfasına gönderilir.
+ * Eski ?lang=xx bağlantıları da burada karşılanır. Tarayıcı diline göre otomatik yönlendirme
+ * bilerek yapılmaz: Google ana sayfayı İngilizce tarayıcıyla gezer ve Türkçe sayfayı göremezdi.
+ */
+function redirectToChosenLanguage(links) {
+  if (document.documentElement.lang !== DEFAULT_LANG) return false;
 
-  const initial = detectLanguage();
-  if (initial !== DEFAULT_LANG) setLanguage(initial);
+  const requested = new URLSearchParams(window.location.search).get("lang") || readStoredLanguage();
+  const target = links.find((link) => link.hreflang === requested);
+  if (!target || target.hreflang === DEFAULT_LANG) return false;
+
+  window.location.replace(target.href + window.location.hash);
+  return true;
 }
 
-/** HTML'deki Türkçe metinleri sözlük olarak toplar; Türkçeye dönüşte buradan yazılır. */
-function collectDefaultStrings() {
-  const strings = {};
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    strings[el.dataset.i18n] = el.innerHTML.trim();
+/** Header'daki dil menüsü; seçenekler sıradan bağlantılardır, seçim hatırlanır. */
+function initLangSwitcher(links) {
+  const root = document.querySelector("[data-lang]");
+  const toggle = root.querySelector("[data-lang-toggle]");
+  const menu = root.querySelector("[data-lang-menu]");
+
+  const setOpen = (open) => {
+    toggle.setAttribute("aria-expanded", String(open));
+    menu.hidden = !open;
+    if (open) menu.querySelector('[aria-current="page"]')?.focus();
+  };
+
+  toggle.addEventListener("click", () => setOpen(menu.hidden));
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => storeLanguage(link.hreflang));
   });
-  forEachTranslatedAttr((el, attr, key) => {
-    strings[key] = el.getAttribute(attr);
+
+  document.addEventListener("click", (event) => {
+    if (!root.contains(event.target)) setOpen(false);
   });
-  return strings;
-}
 
-/** data-i18n-attr="alt:anahtar; aria-label:anahtar" biçimindeki nitelikleri dolaşır. */
-function forEachTranslatedAttr(callback) {
-  document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
-    el.dataset.i18nAttr.split(";").forEach((pair) => {
-      const [attr, key] = pair.split(":").map((part) => part.trim());
-      if (attr && key) callback(el, attr, key);
-    });
-  });
-}
-
-function applyTranslations() {
-  // Çeviri metinleri yalnızca bu sitenin kendi dosyalarından gelir; <strong>/<em> içerebilir.
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    el.innerHTML = t(el.dataset.i18n);
-  });
-  forEachTranslatedAttr((el, attr, key) => el.setAttribute(attr, t(key)));
-}
-
-/** Öncelik: ?lang= adresi → kayıtlı seçim → tarayıcı dili → Türkçe. */
-function detectLanguage() {
-  const candidates = [
-    new URLSearchParams(window.location.search).get("lang"),
-    readStoredLanguage(),
-    ...(navigator.languages || [navigator.language]),
-  ];
-  for (const candidate of candidates) {
-    const code = candidate?.toLowerCase().split("-")[0];
-    if (findLanguage(code)) return code;
-  }
-  return DEFAULT_LANG;
-}
-
-function findLanguage(code) {
-  return LANGUAGES.find((lang) => lang.code === code);
-}
-
-async function setLanguage(code, { remember = false } = {}) {
-  const lang = findLanguage(code) ? code : DEFAULT_LANG;
-  const request = ++latestLanguageRequest;
-
-  try {
-    await loadLocale(lang);
-  } catch {
-    return; // Dosya yüklenemezse mevcut dilde kalınır.
-  }
-  if (request !== latestLanguageRequest) return; // Bu arada başka bir dil seçildi.
-
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = findLanguage(lang).dir || "ltr";
-  applyTranslations();
-  updateLangSwitcher();
-  if (remember) storeLanguage(lang);
-}
-
-/** Dil dosyasını <script> ile yükler; dosyayı çift tıklayıp açınca da çalışır. */
-function loadLocale(code) {
-  if (locales[code]) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = `js/i18n/${code}.js`;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.append(script);
+  root.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || menu.hidden) return;
+    setOpen(false);
+    toggle.focus();
   });
 }
 
@@ -154,65 +89,6 @@ function storeLanguage(code) {
   } catch {
     // Gizli sekme vb. durumlarda seçim hatırlanmaz; site yine çalışır.
   }
-}
-
-/** Header'daki dil menüsü. */
-function initLangSwitcher() {
-  const root = document.querySelector("[data-lang]");
-  if (!root) return;
-
-  const toggle = root.querySelector("[data-lang-toggle]");
-  const menu = root.querySelector("[data-lang-menu]");
-
-  LANGUAGES.forEach(({ code, name }) => {
-    const option = document.createElement("button");
-    option.type = "button";
-    option.className = "lang__option";
-    option.lang = code;
-    option.dataset.langOption = code;
-    option.textContent = name;
-
-    const item = document.createElement("li");
-    item.append(option);
-    menu.append(item);
-  });
-
-  const setOpen = (open) => {
-    toggle.setAttribute("aria-expanded", String(open));
-    menu.hidden = !open;
-    if (open) menu.querySelector('[aria-current="true"]')?.focus();
-  };
-
-  toggle.addEventListener("click", () => setOpen(menu.hidden));
-
-  menu.addEventListener("click", (event) => {
-    const option = event.target.closest("[data-lang-option]");
-    if (!option) return;
-    setLanguage(option.dataset.langOption, { remember: true });
-    setOpen(false);
-    toggle.focus();
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!root.contains(event.target)) setOpen(false);
-  });
-
-  root.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape" || menu.hidden) return;
-    setOpen(false);
-    toggle.focus();
-  });
-
-  updateLangSwitcher();
-}
-
-function updateLangSwitcher() {
-  const current = document.querySelector("[data-lang-current]");
-  if (current) current.textContent = currentLang.toUpperCase();
-
-  document.querySelectorAll("[data-lang-option]").forEach((option) => {
-    option.setAttribute("aria-current", String(option.dataset.langOption === currentLang));
-  });
 }
 
 /* ==========================================================================
@@ -298,9 +174,7 @@ function initPicker() {
     nameEl.textContent = randomName();
     card.classList.add("is-picked");
     button.disabled = false;
-    // Anahtarı değiştiriyoruz ki dil değişince doğru metin yazılsın.
-    button.dataset.i18n = "tool.mock.again";
-    button.textContent = t("tool.mock.again");
+    if (button.dataset.labelAgain) button.textContent = button.dataset.labelAgain;
   };
 
   button.addEventListener("click", () => {

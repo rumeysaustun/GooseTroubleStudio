@@ -1,9 +1,7 @@
-/* العربية — sayfa bu dilde sağdan sola (dir="rtl") gösterilir */
-window.GT_LOCALES = window.GT_LOCALES || {};
-window.GT_LOCALES.ar = {
+{
   "meta.title": "Goose Trouble Studio — استوديو ألعاب الهاتف",
   "meta.description": "Goose Trouble Studio استوديو مستقل يطوّر ألعاب تحقيق للهاتف مليئة بقضايا القتل والغرف المظلمة والأدلة الخفية. وأجرِ سحبك في ثوانٍ مع Feedzi.",
-
+  "meta.ogDescription": "ألعاب تحقيق وغموض للهاتف. العب. حقّق. اكتشف.",
   "a11y.skip": "انتقل إلى المحتوى",
   "a11y.home": "الصفحة الرئيسية لـ Goose Trouble Studio",
   "a11y.menu": "افتح القائمة",
@@ -12,13 +10,11 @@ window.GT_LOCALES.ar = {
   "a11y.language": "اختر اللغة",
   "a11y.platforms": "المنصات",
   "a11y.rules": "قواعد تجريبية",
-
   "nav.games": "الألعاب",
   "nav.studio": "الاستوديو",
   "nav.tool": "أداة السحب",
   "nav.contact": "تواصل معنا",
   "nav.cta": "ابدأ سحبًا",
-
   "hero.eyebrow": "العب. حقّق. اكتشف.",
   "hero.title1": "إوزة صغيرة.",
   "hero.title2": "مشكلة كبيرة.",
@@ -26,13 +22,11 @@ window.GT_LOCALES.ar = {
   "hero.ctaGames": "اكتشف الألعاب",
   "hero.ctaTool": "جرّب Feedzi",
   "hero.mascotAlt": "Trouble Goose: التميمة بنظارات برتقالية وسماعات رأس وهودي أسود",
-
   "ticker.1": "ألعاب تحقيق",
   "ticker.2": "قضايا قتل",
   "ticker.3": "غرف مظلمة",
   "ticker.4": "أدلة خفية",
   "ticker.5": "Feedzi أداة السحب",
-
   "games.title": "ماذا يفقس الآن؟",
   "games.lead": "ألعابنا التي خرجت للتو من البيضة. المزيد من التفاصيل كلما تسرّبت.",
   "games.status": "قيد التطوير",
@@ -41,7 +35,6 @@ window.GT_LOCALES.ar = {
   "games.next.title": "الملف التالي",
   "games.next.desc": "مختوم. هذا كل ما يمكننا قوله الآن.",
   "games.ios": "<strong>«متى يصل iOS؟»</strong> الإوزة لا تملك MacBook. الحصّالة تمتلئ، وعندما تمتلئ سنطير مباشرة إلى App Store.",
-
   "studio.imgAlt": "شعار Goose Trouble Studio مع Trouble Goose وهي تشرب القهوة",
   "studio.title": "الفريق وراء الإوزة",
   "studio.lead": "نحن فريق صغير يحب الغموض والتشويق والإحساس بـ«دليل واحد آخر». أجواء ألعابنا مظلمة، أما إوزتنا فتبقى مشاغبة كعادتها.",
@@ -51,7 +44,6 @@ window.GT_LOCALES.ar = {
   "studio.f2.desc": "في كل لعبة أثر من Trouble Goose. يتغيّر النوع، أما شخصية الإوزة فلا تتغيّر.",
   "studio.f3.title": "أبعد من الألعاب",
   "studio.f3.desc": "نطوّر أيضًا أدوات ويب عملية لصنّاع المحتوى والعلامات التجارية.",
-
   "tool.tag": "أداة السحب",
   "tool.title": "أجرِ سحبك، ودع <em>الإوزة</em> تختار الفائز.",
   "tool.lead": "الصق رابط المنشور، وحدّد قواعدك، واختر فائزًا بعدل وعشوائية. بلا جداول Excel، ولا تسجيل للشاشة، ولا جدال حول «هل كان مُرتّبًا؟».",
@@ -67,9 +59,7 @@ window.GT_LOCALES.ar = {
   "tool.mock.pick": "اختر الفائز",
   "tool.mock.again": "اسحب مجددًا",
   "tool.mock.note": "هذا عرض تجريبي. افتح الأداة لإجراء سحب حقيقي.",
-
   "contact.title": "لديك فكرة؟ الإوزة تستمع.",
   "contact.lead": "راسلنا للشراكات والصحافة وملاحظات اللاعبين ومستخدمي الأداة.",
-
-  "footer.rights": "جميع الحقوق محفوظة.",
-};
+  "footer.rights": "جميع الحقوق محفوظة."
+}

@@ -8,3 +8,6 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Python önbelleği
+__pycache__/

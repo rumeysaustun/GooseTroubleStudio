@@ -4,23 +4,54 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--
-    Çoklu dil: Türkçe metinler bu dosyada durur. Diğer diller js/i18n/<kod>.js dosyalarındadır.
+    Çoklu dil: bu dosya Türkçe sayfadır ve diğer dillerin kaynağıdır.
+    Çeviriler i18n/<kod>.json içinde; <kod>/index.html sayfalarını tools/build_i18n.py üretir.
     data-i18n="anahtar"            → öğenin içeriği çevrilir
     data-i18n-attr="alt:anahtar"   → öğenin niteliği çevrilir (birden fazlası ";" ile ayrılır)
+    Metin değiştirdikten sonra: python tools/build_i18n.py
   -->
   <title data-i18n="meta.title">Goose Trouble Studio — Mobil Oyun Stüdyosu</title>
   <meta name="description" data-i18n-attr="content:meta.description" content="Goose Trouble Studio; cinayet davaları, karanlık odalar ve saklı ipuçlarıyla dolu mobil dedektif oyunları geliştiren bağımsız bir stüdyo. Çekilişini de Feedzi ile saniyeler içinde yap.">
   <meta name="theme-color" content="#0D0D0F">
 
+  <!-- Asıl adres, diğer dillerdeki karşılıkları ve paylaşım adresi (tools/build_i18n.py yazar) -->
+  <!-- i18n-head:start -->
   <link rel="canonical" href="https://goosetroublestudio.com/">
+  <link rel="alternate" hreflang="ar" href="https://goosetroublestudio.com/ar/">
+  <link rel="alternate" hreflang="de" href="https://goosetroublestudio.com/de/">
+  <link rel="alternate" hreflang="el" href="https://goosetroublestudio.com/el/">
+  <link rel="alternate" hreflang="en" href="https://goosetroublestudio.com/en/">
+  <link rel="alternate" hreflang="es" href="https://goosetroublestudio.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://goosetroublestudio.com/fr/">
+  <link rel="alternate" hreflang="id" href="https://goosetroublestudio.com/id/">
+  <link rel="alternate" hreflang="it" href="https://goosetroublestudio.com/it/">
+  <link rel="alternate" hreflang="pt" href="https://goosetroublestudio.com/pt/">
+  <link rel="alternate" hreflang="ro" href="https://goosetroublestudio.com/ro/">
+  <link rel="alternate" hreflang="ru" href="https://goosetroublestudio.com/ru/">
+  <link rel="alternate" hreflang="tr" href="https://goosetroublestudio.com/">
+  <link rel="alternate" hreflang="zh" href="https://goosetroublestudio.com/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://goosetroublestudio.com/">
+  <meta property="og:url" content="https://goosetroublestudio.com/">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="ar_AR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="el_GR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="id_ID">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="ro_RO">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <!-- i18n-head:end -->
 
   <!-- Paylaşım önizlemesi: sosyal ağlar ve arama motorları tam adres ister -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Goose Trouble Studio">
-  <meta property="og:locale" content="tr_TR">
-  <meta property="og:url" content="https://goosetroublestudio.com/">
   <meta property="og:title" content="Goose Trouble Studio">
-  <meta property="og:description" content="Mobil dedektif ve gizem oyunları. Oyna. Araştır. Keşfet.">
+  <meta property="og:description" data-i18n-attr="content:meta.ogDescription" content="Mobil dedektif ve gizem oyunları. Oyna. Araştır. Keşfet.">
   <meta property="og:image" content="https://goosetroublestudio.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -80,14 +111,30 @@
         <a class="btn btn--primary btn--sm" href="#cekilis-araci" data-i18n="nav.cta">Çekiliş yap</a>
       </nav>
 
-      <!-- Dil listesi js/main.js içindeki LANGUAGES dizisinden oluşturulur -->
+      <!-- Her dil kendi sayfasına gider; liste tools/build_i18n.py ile yazılır -->
       <div class="lang" data-lang>
         <button class="lang__toggle" type="button" aria-expanded="false" aria-controls="lang-menu"
                 data-lang-toggle data-i18n-attr="aria-label:a11y.language" aria-label="Dil seç">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
           <span data-lang-current>TR</span>
         </button>
-        <ul class="lang__menu" id="lang-menu" data-lang-menu hidden></ul>
+        <ul class="lang__menu" id="lang-menu" data-lang-menu hidden>
+          <!-- i18n-menu:start -->
+          <li><a class="lang__option" href="ar/" hreflang="ar" lang="ar">العربية</a></li>
+          <li><a class="lang__option" href="de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a class="lang__option" href="el/" hreflang="el" lang="el">Ελληνικά</a></li>
+          <li><a class="lang__option" href="en/" hreflang="en" lang="en">English</a></li>
+          <li><a class="lang__option" href="es/" hreflang="es" lang="es">Español</a></li>
+          <li><a class="lang__option" href="fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a class="lang__option" href="id/" hreflang="id" lang="id">Bahasa Indonesia</a></li>
+          <li><a class="lang__option" href="it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a class="lang__option" href="pt/" hreflang="pt" lang="pt">Português</a></li>
+          <li><a class="lang__option" href="ro/" hreflang="ro" lang="ro">Română</a></li>
+          <li><a class="lang__option" href="ru/" hreflang="ru" lang="ru">Русский</a></li>
+          <li><a class="lang__option" href="./" hreflang="tr" lang="tr" aria-current="page">Türkçe</a></li>
+          <li><a class="lang__option" href="zh/" hreflang="zh" lang="zh">中文</a></li>
+          <!-- i18n-menu:end -->
+        </ul>
       </div>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
@@ -292,7 +339,8 @@
               </div>
             </div>
 
-            <button class="btn btn--primary mock__button" type="button" data-picker data-i18n="tool.mock.pick">Kazananı seç</button>
+            <button class="btn btn--primary mock__button" type="button" data-picker data-i18n="tool.mock.pick"
+                    data-label-again="Tekrar çek" data-i18n-attr="data-label-again:tool.mock.again">Kazananı seç</button>
             <p class="mock__note" data-i18n="tool.mock.note">Bu bir demodur. Gerçek çekiliş için aracı aç.</p>
           </div>
         </div>

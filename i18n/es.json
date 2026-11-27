@@ -1,9 +1,7 @@
-/* Español */
-window.GT_LOCALES = window.GT_LOCALES || {};
-window.GT_LOCALES.es = {
+{
   "meta.title": "Goose Trouble Studio — Estudio de juegos móviles",
   "meta.description": "Goose Trouble Studio es un estudio independiente que crea juegos móviles de detectives llenos de casos de asesinato, habitaciones oscuras y pistas ocultas. Haz tu sorteo en segundos con Feedzi.",
-
+  "meta.ogDescription": "Juegos móviles de detectives y misterio. Juega. Investiga. Descubre.",
   "a11y.skip": "Saltar al contenido",
   "a11y.home": "Inicio de Goose Trouble Studio",
   "a11y.menu": "Abrir menú",
@@ -12,13 +10,11 @@ window.GT_LOCALES.es = {
   "a11y.language": "Elegir idioma",
   "a11y.platforms": "Plataformas",
   "a11y.rules": "Reglas de ejemplo",
-
   "nav.games": "Juegos",
   "nav.studio": "Estudio",
   "nav.tool": "Herramienta de sorteos",
   "nav.contact": "Contacto",
   "nav.cta": "Hacer un sorteo",
-
   "hero.eyebrow": "Juega. Investiga. Descubre.",
   "hero.title1": "Ganso pequeño.",
   "hero.title2": "Gran problema.",
@@ -26,13 +22,11 @@ window.GT_LOCALES.es = {
   "hero.ctaGames": "Descubre los juegos",
   "hero.ctaTool": "Prueba Feedzi",
   "hero.mascotAlt": "Trouble Goose: la mascota con gafas naranjas, auriculares y sudadera negra",
-
   "ticker.1": "Juegos de detectives",
   "ticker.2": "Casos de asesinato",
   "ticker.3": "Habitaciones oscuras",
   "ticker.4": "Pistas ocultas",
   "ticker.5": "Feedzi, herramienta de sorteos",
-
   "games.title": "¿Qué se está incubando?",
   "games.lead": "Nuestros juegos recién salidos del cascarón. Más detalles a medida que se filtren.",
   "games.status": "En desarrollo",
@@ -41,7 +35,6 @@ window.GT_LOCALES.es = {
   "games.next.title": "Próximo expediente",
   "games.next.desc": "Sellado. Por ahora, eso es todo lo que podemos decir.",
   "games.ios": "<strong>«¿Y iOS para cuándo?»</strong> El ganso no tiene MacBook. La hucha se va llenando; cuando esté llena, volaremos directo a la App Store.",
-
   "studio.imgAlt": "Logo de Goose Trouble Studio con Trouble Goose tomando café",
   "studio.title": "El equipo detrás del ganso",
   "studio.lead": "Somos un equipo pequeño al que le encantan el misterio, la tensión y la sensación de «una pista más». Nuestros juegos tienen una atmósfera oscura; nuestro ganso, en cambio, sigue tan travieso como siempre.",
@@ -51,7 +44,6 @@ window.GT_LOCALES.es = {
   "studio.f2.desc": "Cada juego lleva la huella de Trouble Goose. El género cambia; el carácter del ganso, no.",
   "studio.f3.title": "Más allá de los juegos",
   "studio.f3.desc": "También creamos herramientas web prácticas para creadores de contenido y marcas.",
-
   "tool.tag": "Herramienta de sorteos",
   "tool.title": "Haz tu sorteo y deja que el <em>ganso</em> elija al ganador.",
   "tool.lead": "Pega el enlace de la publicación, define tus reglas y elige un ganador de forma justa y aleatoria. Sin hojas de cálculo, sin grabaciones de pantalla, sin debates de «¿estaba amañado?».",
@@ -67,9 +59,7 @@ window.GT_LOCALES.es = {
   "tool.mock.pick": "Elegir ganador",
   "tool.mock.again": "Sortear de nuevo",
   "tool.mock.note": "Esto es una demo. Abre la herramienta para un sorteo real.",
-
   "contact.title": "¿Tienes una idea? El ganso te escucha.",
   "contact.lead": "Escríbenos para colaboraciones, prensa y comentarios de jugadores y usuarios de la herramienta.",
-
-  "footer.rights": "Todos los derechos reservados.",
-};
+  "footer.rights": "Todos los derechos reservados."
+}

@@ -1,9 +1,7 @@
-/* Français — les espaces avant ? : ; « » sont insécables ( ) */
-window.GT_LOCALES = window.GT_LOCALES || {};
-window.GT_LOCALES.fr = {
+{
   "meta.title": "Goose Trouble Studio — Studio de jeux mobiles",
   "meta.description": "Goose Trouble Studio est un studio indépendant qui crée des jeux mobiles d’enquête remplis d’affaires de meurtre, de pièces obscures et d’indices cachés. Organisez votre tirage au sort en quelques secondes avec Feedzi.",
-
+  "meta.ogDescription": "Jeux mobiles d’enquête et de mystère. Jouez. Enquêtez. Découvrez.",
   "a11y.skip": "Aller au contenu",
   "a11y.home": "Accueil Goose Trouble Studio",
   "a11y.menu": "Ouvrir le menu",
@@ -12,13 +10,11 @@ window.GT_LOCALES.fr = {
   "a11y.language": "Choisir la langue",
   "a11y.platforms": "Plateformes",
   "a11y.rules": "Exemples de règles",
-
   "nav.games": "Jeux",
   "nav.studio": "Studio",
   "nav.tool": "Outil de tirage",
   "nav.contact": "Contact",
   "nav.cta": "Lancer un tirage",
-
   "hero.eyebrow": "Jouez. Enquêtez. Découvrez.",
   "hero.title1": "Petite oie.",
   "hero.title2": "Gros ennuis.",
@@ -26,13 +22,11 @@ window.GT_LOCALES.fr = {
   "hero.ctaGames": "Découvrir les jeux",
   "hero.ctaTool": "Essayer Feedzi",
   "hero.mascotAlt": "Trouble Goose : la mascotte avec lunettes orange, casque audio et sweat à capuche noir",
-
   "ticker.1": "Jeux d’enquête",
   "ticker.2": "Affaires de meurtre",
   "ticker.3": "Pièces obscures",
   "ticker.4": "Indices cachés",
   "ticker.5": "Feedzi, outil de tirage",
-
   "games.title": "Qu’est-ce qui couve ?",
   "games.lead": "Nos jeux tout juste éclos. Plus de détails au fil des fuites.",
   "games.status": "En développement",
@@ -41,7 +35,6 @@ window.GT_LOCALES.fr = {
   "games.next.title": "Prochain dossier",
   "games.next.desc": "Scellé. C’est tout ce que nous pouvons dire pour l’instant.",
   "games.ios": "<strong>« Et iOS, c’est pour quand ? »</strong> L’oie n’a pas de MacBook. La tirelire se remplit ; dès qu’elle est pleine, on s’envole vers l’App Store.",
-
   "studio.imgAlt": "Logo Goose Trouble Studio avec Trouble Goose buvant un café",
   "studio.title": "L’équipe derrière l’oie",
   "studio.lead": "Nous sommes une petite équipe qui aime le mystère, le suspense et la sensation du « encore un indice ». Nos jeux ont une ambiance sombre ; notre oie, elle, reste espiègle comme toujours.",
@@ -51,7 +44,6 @@ window.GT_LOCALES.fr = {
   "studio.f2.desc": "Chaque jeu porte la marque de Trouble Goose. Le genre change, le caractère de l’oie, jamais.",
   "studio.f3.title": "Au-delà du jeu",
   "studio.f3.desc": "Nous créons aussi des outils web pratiques pour les créateurs de contenu et les marques.",
-
   "tool.tag": "Outil de tirage au sort",
   "tool.title": "Lancez votre tirage, laissez l’<em>oie</em> choisir le gagnant.",
   "tool.lead": "Collez le lien de la publication, définissez vos règles, tirez un gagnant de façon équitable et aléatoire. Pas de tableur, pas d’enregistrement d’écran, pas de débat « c’était truqué ? ».",
@@ -67,9 +59,7 @@ window.GT_LOCALES.fr = {
   "tool.mock.pick": "Tirer un gagnant",
   "tool.mock.again": "Relancer le tirage",
   "tool.mock.note": "Ceci est une démo. Ouvrez l’outil pour un vrai tirage.",
-
   "contact.title": "Une idée ? L’oie vous écoute.",
   "contact.lead": "Écrivez-nous pour les partenariats, la presse et les retours des joueurs et des utilisateurs de l’outil.",
-
-  "footer.rights": "Tous droits réservés.",
-};
+  "footer.rights": "Tous droits réservés."
+}

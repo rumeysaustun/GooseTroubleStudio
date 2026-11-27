@@ -1,9 +1,7 @@
-/* Bahasa Indonesia */
-window.GT_LOCALES = window.GT_LOCALES || {};
-window.GT_LOCALES.id = {
+{
   "meta.title": "Goose Trouble Studio — Studio Game Mobile",
   "meta.description": "Goose Trouble Studio adalah studio independen yang membuat game detektif mobile penuh kasus pembunuhan, ruangan gelap, dan petunjuk tersembunyi. Adakan giveaway-mu dalam hitungan detik dengan Feedzi.",
-
+  "meta.ogDescription": "Game mobile detektif dan misteri. Main. Selidiki. Temukan.",
   "a11y.skip": "Lewati ke konten",
   "a11y.home": "Beranda Goose Trouble Studio",
   "a11y.menu": "Buka menu",
@@ -12,13 +10,11 @@ window.GT_LOCALES.id = {
   "a11y.language": "Pilih bahasa",
   "a11y.platforms": "Platform",
   "a11y.rules": "Contoh aturan",
-
   "nav.games": "Game",
   "nav.studio": "Studio",
   "nav.tool": "Alat Giveaway",
   "nav.contact": "Kontak",
   "nav.cta": "Adakan giveaway",
-
   "hero.eyebrow": "Main. Selidiki. Temukan.",
   "hero.title1": "Angsa kecil.",
   "hero.title2": "Masalah besar.",
@@ -26,13 +22,11 @@ window.GT_LOCALES.id = {
   "hero.ctaGames": "Jelajahi game",
   "hero.ctaTool": "Coba Feedzi",
   "hero.mascotAlt": "Trouble Goose: maskot dengan kacamata oranye, headphone, dan hoodie hitam",
-
   "ticker.1": "Game detektif",
   "ticker.2": "Kasus pembunuhan",
   "ticker.3": "Ruangan gelap",
   "ticker.4": "Petunjuk tersembunyi",
   "ticker.5": "Feedzi, alat giveaway",
-
   "games.title": "Apa yang sedang dierami?",
   "games.lead": "Game-game kami yang baru menetas. Detail lainnya menyusul saat bocor.",
   "games.status": "Dalam pengembangan",
@@ -41,7 +35,6 @@ window.GT_LOCALES.id = {
   "games.next.title": "Berkas berikutnya",
   "games.next.desc": "Disegel. Untuk saat ini, hanya itu yang bisa kami katakan.",
   "games.ios": "<strong>“Kapan versi iOS?”</strong> Si angsa belum punya MacBook. Celengannya sedang diisi; begitu penuh, kami langsung terbang ke App Store.",
-
   "studio.imgAlt": "Logo Goose Trouble Studio dengan Trouble Goose yang sedang minum kopi",
   "studio.title": "Tim di balik si angsa",
   "studio.lead": "Kami tim kecil yang menyukai misteri, ketegangan, dan perasaan “satu petunjuk lagi”. Suasana game kami gelap; angsa kami tetap jahil seperti biasa.",
@@ -51,7 +44,6 @@ window.GT_LOCALES.id = {
   "studio.f2.desc": "Setiap game membawa jejak Trouble Goose. Genre boleh berubah, karakter si angsa tidak.",
   "studio.f3.title": "Lebih dari sekadar game",
   "studio.f3.desc": "Kami juga membuat alat web praktis untuk kreator konten dan brand.",
-
   "tool.tag": "Alat giveaway",
   "tool.title": "Adakan giveaway-mu, biar si <em>angsa</em> yang memilih pemenangnya.",
   "tool.lead": "Tempel tautan postingan, atur aturannya, pilih pemenang secara adil dan acak. Tanpa Excel, tanpa rekam layar, tanpa debat “ini curang nggak?”.",
@@ -67,9 +59,7 @@ window.GT_LOCALES.id = {
   "tool.mock.pick": "Pilih pemenang",
   "tool.mock.again": "Undi lagi",
   "tool.mock.note": "Ini hanya demo. Buka alatnya untuk giveaway sungguhan.",
-
   "contact.title": "Punya ide? Si angsa mendengarkan.",
   "contact.lead": "Hubungi kami untuk kerja sama, pers, serta masukan dari pemain dan pengguna alat kami.",
-
-  "footer.rights": "Hak cipta dilindungi undang-undang.",
-};
+  "footer.rights": "Hak cipta dilindungi undang-undang."
+}

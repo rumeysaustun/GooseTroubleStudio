@@ -14,17 +14,31 @@ Ardından http://127.0.0.1:5500 adresini aç.
 
 ## Yapı
 
-- `index.html` — sayfa; Türkçe metinler burada (kaynak dil)
+- `index.html` — Türkçe sayfa; aynı zamanda diğer dillerin kaynağı
+- `i18n/<dil>.json` — diğer 12 dilin çevirileri
+- `<dil>/index.html` — dil sayfaları (`/en/`, `/de/` …); **elle düzenlenmez, üretilir**
+- `tools/build_i18n.py` — dil sayfalarını ve `sitemap.xml`'i üretir
 - `css/style.css` — tüm stiller, marka renkleri en üstte değişken olarak
-- `js/main.js` — dil seçici, menü, animasyonlar, çekiliş demosu
-- `js/i18n/<dil>.js` — diğer 12 dilin çevirileri
+- `js/main.js` — dil menüsü, mobil menü, animasyonlar, çekiliş demosu
 - `assets/img/` — web için optimize edilmiş görseller
 
 ## Çeviriler
 
-Metinler `data-i18n="anahtar"` (içerik) ve `data-i18n-attr="öznitelik:anahtar"` ile işaretlenir.
-Türkçe bir metin değişirse ya da yeni metin eklenirse, aynı anahtar `js/i18n/` altındaki
-12 dosyanın hepsine eklenmeli. Eksik anahtarlar Türkçeye düşer.
+Her dilin kendi adresi var; Google her dili ayrı sayfa olarak dizine ekler.
+Metinler `index.html` içinde `data-i18n="anahtar"` (içerik) ve
+`data-i18n-attr="öznitelik:anahtar"` ile işaretlenir.
+
+Bir metni değiştirdikten ya da yeni metin ekledikten sonra:
+
+1. Aynı anahtarı `i18n/` altındaki 12 dosyanın hepsinde güncelle.
+2. Sayfaları yeniden üret:
+
+   ```sh
+   python tools/build_i18n.py
+   ```
+
+`python tools/build_i18n.py --check` hiçbir şey yazmaz; eksik çeviri ya da
+güncel olmayan sayfa varsa söyler.
 
 ## Yayın
 
