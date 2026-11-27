@@ -46,7 +46,7 @@ LANGUAGES = [
 ]
 
 # Üreteç dışında elle yazılan, site haritasına girecek sayfalar.
-EXTRA_PAGES = ["dosya-021/", "afterlight/", "gizlilik/", "en/privacy/"]
+EXTRA_PAGES = ["dosya-021/", "afterlight/", "goose-exe/", "gizlilik/", "en/privacy/"]
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
              "link", "meta", "source", "track", "wbr"}
