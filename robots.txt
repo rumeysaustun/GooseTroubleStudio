@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goosetroublestudio.com/sitemap.xml
