@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Trouble Goose — Mascot Icon</title>
+  <desc>Vector mascot head with orange crown, goggles, black and red headphones, cream feathers and orange beak. Transparent background.</desc>
+  <defs>
+    <style>
+      .cream{fill:#FFF4E6}.ink{fill:#0D0D0F}.orange{fill:#D35400}
+      .red{fill:#E10600}.stroke{stroke:#0D0D0F;stroke-width:24;stroke-linecap:round;stroke-linejoin:round}
+      .creamline{stroke:#FFF4E6;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <!-- Crown -->
+  <path d="M270 216 L232 105 L337 164 L414 65 L474 162 L574 103 L548 226 Z"
+        fill="#D35400" stroke="#0D0D0F" stroke-width="25" stroke-linejoin="round"/>
+  <path d="M285 195 L257 137 L338 181 L414 103 L467 180 L547 137 L530 201 Z"
+        fill="#FFF4E6" opacity=".16"/>
+  <!-- Head silhouette -->
+  <path d="M176 617 C144 512 166 363 254 264 C321 187 426 166 526 193
+           C635 222 718 304 746 410 C777 526 732 658 642 735
+           C574 793 468 819 360 786 C267 758 204 701 176 617 Z"
+        class="cream" stroke="#0D0D0F" stroke-width="30" stroke-linejoin="round"/>
+  <!-- Feather tufts -->
+  <path d="M330 215 C318 164 345 121 382 91 C376 140 396 164 421 185
+           M405 197 C412 142 454 105 500 91 C472 137 478 164 495 194"
+        fill="none" stroke="#FFF4E6" stroke-width="28" stroke-linecap="round"/>
+  <path d="M330 215 C318 164 345 121 382 91 M405 197 C412 142 454 105 500 91"
+        fill="none" stroke="#0D0D0F" stroke-width="13" stroke-linecap="round"/>
+  <!-- Headphones band -->
+  <path d="M214 492 C184 326 294 201 448 190 C594 180 713 283 726 427"
+        fill="none" stroke="#0D0D0F" stroke-width="76" stroke-linecap="round"/>
+  <path d="M214 492 C184 326 294 201 448 190 C594 180 713 283 726 427"
+        fill="none" stroke="#D35400" stroke-width="27" stroke-linecap="round"/>
+  <!-- Goggles strap and lenses -->
+  <path d="M271 279 L630 256" stroke="#0D0D0F" stroke-width="32" stroke-linecap="round"/>
+  <g stroke="#0D0D0F" stroke-width="24" stroke-linejoin="round">
+    <path d="M285 220 Q298 196 326 201 L438 218 Q459 224 455 250 L438 315 Q431 337 405 333 L299 311 Q273 305 278 278 Z" fill="#242326"/>
+    <path d="M470 224 Q475 201 503 204 L620 219 Q646 223 640 251 L622 318 Q616 339 589 335 L484 316 Q459 310 463 282 Z" fill="#242326"/>
+  </g>
+  <path d="M308 229 L415 245 L405 298 L298 279 Z M493 232 L608 247 L592 301 L482 283 Z"
+        fill="#D35400" opacity=".58"/>
+  <path d="M321 237 L410 250 M505 240 L599 254" stroke="#FFF4E6" stroke-width="13" stroke-linecap="round" opacity=".7"/>
+  <!-- Headphone ear cups -->
+  <path d="M163 456 Q158 418 197 405 L250 390 Q284 383 297 420 L317 531
+           Q323 565 289 581 L231 605 Q193 620 180 583 Z"
+        fill="#0D0D0F" stroke="#D35400" stroke-width="18"/>
+  <path d="M680 420 Q696 385 731 397 L779 415 Q812 428 802 465 L775 573
+           Q767 608 731 595 L676 576 Q642 564 653 528 Z"
+        fill="#0D0D0F" stroke="#D35400" stroke-width="18"/>
+  <circle cx="242" cy="500" r="54" fill="#242326" stroke="#D35400" stroke-width="12"/>
+  <circle cx="730" cy="500" r="54" fill="#242326" stroke="#D35400" stroke-width="12"/>
+  <!-- Pixel goose mark on left cup -->
+  <path d="M220 469 h22 v18 h18 v18 h-18 v18 h-22 v-18 h-18 v-18 h18z
+           M240 449 h18 v18 h-18z M198 491 h18 v18 h-18z"
+        fill="#E10600"/>
+  <!-- Beak -->
+  <path d="M536 493 C608 449 692 438 787 469 C744 506 674 548 585 550
+           C554 551 528 529 536 493 Z"
+        class="orange" stroke="#0D0D0F" stroke-width="24" stroke-linejoin="round"/>
+  <path d="M570 511 C635 498 696 488 751 481" fill="none" stroke="#F28A24" stroke-width="13" stroke-linecap="round"/>
+  <!-- Eye and brow -->
+  <path d="M374 411 C420 379 481 384 514 416" fill="none" stroke="#0D0D0F" stroke-width="23" stroke-linecap="round"/>
+  <path d="M378 439 C416 414 466 418 489 445 C464 478 412 483 384 459 Z" class="ink"/>
+  <ellipse cx="437" cy="445" rx="12" ry="18" fill="#FFF4E6"/>
+  <!-- Neck/hoodie hint -->
+  <path d="M274 702 C333 658 405 648 475 666 C540 682 592 721 622 771
+           C541 830 410 850 305 805 C276 792 254 750 274 702 Z"
+        fill="#0D0D0F" stroke="#0D0D0F" stroke-width="20"/>
+  <path d="M378 700 Q447 735 517 700" fill="none" stroke="#D35400" stroke-width="18" stroke-linecap="round"/>
+  <!-- Coffee mug, signature accessory -->
+  <g transform="translate(650 676) rotate(-8)">
+    <path d="M0 24 Q0 0 25 0 H132 Q156 0 156 24 V118 Q156 141 132 141 H25 Q0 141 0 118 Z"
+          fill="#FFF4E6" stroke="#0D0D0F" stroke-width="20"/>
+    <path d="M156 43 H182 Q216 43 216 76 Q216 111 182 111 H156"
+          fill="none" stroke="#0D0D0F" stroke-width="20"/>
+    <path d="M48 51 h24 v18 h18 v18 h-18 v18 h-24 v-18 h-18 v-18 h18z"
+          fill="#0D0D0F"/>
+  </g>
+  <!-- Small steam curls -->
+  <path d="M705 640 C682 616 720 600 700 576 M754 631 C735 606 772 591 753 568"
+        fill="none" stroke="#D35400" stroke-width="13" stroke-linecap="round"/>
+</svg>

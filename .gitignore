@@ -1,0 +1,10 @@
+# Orijinal marka dosyaları (logo kaynakları, marka kılavuzu PDF).
+# Site bunları kullanmaz; herkese açık depoya/siteye gitmemeli.
+brand/
+
+# İşletim sistemi ve editör çöpleri
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

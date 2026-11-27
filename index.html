@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Çoklu dil: Türkçe metinler bu dosyada durur. Diğer diller js/i18n/<kod>.js dosyalarındadır.
+    data-i18n="anahtar"            → öğenin içeriği çevrilir
+    data-i18n-attr="alt:anahtar"   → öğenin niteliği çevrilir (birden fazlası ";" ile ayrılır)
+  -->
+  <title data-i18n="meta.title">Goose Trouble Studio — Mobil Oyun Stüdyosu</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Goose Trouble Studio; cinayet davaları, karanlık odalar ve saklı ipuçlarıyla dolu mobil dedektif oyunları geliştiren bağımsız bir stüdyo. Çekilişini de Feedzi ile saniyeler içinde yap.">
+  <meta name="theme-color" content="#0D0D0F">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Goose Trouble Studio">
+  <meta property="og:description" content="Mobil dedektif ve gizem oyunları. Oyna. Araştır. Keşfet.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">İçeriğe geç</a>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" data-i18n-attr="aria-label:a11y.home" aria-label="Goose Trouble Studio ana sayfa">
+        <img src="assets/img/logo-horizontal.webp" alt="Goose Trouble Studio" width="640" height="119">
+      </a>
+
+      <nav class="site-nav" id="site-nav" data-i18n-attr="aria-label:a11y.mainNav" aria-label="Ana menü" data-nav>
+        <ul class="site-nav__list">
+          <li><a href="#oyunlar" data-i18n="nav.games">Oyunlar</a></li>
+          <li><a href="#studyo" data-i18n="nav.studio">Stüdyo</a></li>
+          <li><a href="#cekilis-araci" data-i18n="nav.tool">Çekiliş Aracı</a></li>
+          <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="#cekilis-araci" data-i18n="nav.cta">Çekiliş yap</a>
+      </nav>
+
+      <!-- Dil listesi js/main.js içindeki LANGUAGES dizisinden oluşturulur -->
+      <div class="lang" data-lang>
+        <button class="lang__toggle" type="button" aria-expanded="false" aria-controls="lang-menu"
+                data-lang-toggle data-i18n-attr="aria-label:a11y.language" aria-label="Dil seç">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span data-lang-current>TR</span>
+        </button>
+        <ul class="lang__menu" id="lang-menu" data-lang-menu hidden></ul>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden" data-i18n="a11y.menu">Menüyü aç</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Oyna. Araştır. Keşfet.</p>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title1">Küçük kaz.</span><br>
+            <span class="text-accent" data-i18n="hero.title2">Büyük bela.</span>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">
+            Goose Trouble Studio; Trouble Goose'un başı belaya girdiği mobil oyunlar geliştiriyor.
+            Bir de çekiliş aracımız Feedzi var.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#oyunlar" data-i18n="hero.ctaGames">Oyunları keşfet</a>
+            <a class="btn btn--ghost" href="#cekilis-araci" data-i18n="hero.ctaTool">Feedzi'yi dene</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__glow" aria-hidden="true"></div>
+          <img class="hero__mascot" src="assets/img/mascot-hero.webp"
+               data-i18n-attr="alt:hero.mascotAlt"
+               alt="Trouble Goose: turuncu gözlüklü, kulaklıklı ve siyah hoodie giyen maskot"
+               width="900" height="900" fetchpriority="high">
+        </div>
+      </div>
+
+      <!-- Kesintisiz kayması için kelimeler iki kez yazılır -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span data-i18n="ticker.1">Dedektif oyunları</span><span data-i18n="ticker.2">Cinayet davaları</span><span data-i18n="ticker.3">Karanlık odalar</span><span data-i18n="ticker.4">Saklı ipuçları</span><span data-i18n="ticker.5"><span lang="en">Feedzi</span> çekiliş aracı</span>
+          <span data-i18n="ticker.1">Dedektif oyunları</span><span data-i18n="ticker.2">Cinayet davaları</span><span data-i18n="ticker.3">Karanlık odalar</span><span data-i18n="ticker.4">Saklı ipuçları</span><span data-i18n="ticker.5"><span lang="en">Feedzi</span> çekiliş aracı</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- OYUNLAR -->
+    <section class="section section--dark" id="oyunlar" aria-labelledby="oyunlar-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="nav.games">Oyunlar</p>
+          <h2 class="section-title" id="oyunlar-title" data-i18n="games.title">Kuluçkada neler var?</h2>
+          <p class="section-lead" data-i18n="games.lead">Yumurtadan yeni çıkan oyunlarımız. Detaylar sızdıkça burada olacak.</p>
+        </header>
+
+        <div class="games">
+          <!--
+            Kapaklar oyun görselleri gelene kadar CSS ile çizilir.
+            Görsel hazır olunca .game-card__cover içine <img> koyman yeterli.
+            Oyun adları ve kapak yazıları çevrilmez.
+          -->
+          <article class="game-card reveal">
+            <div class="game-card__cover game-card__cover--file" lang="tr" aria-hidden="true">
+              <span class="cover-file__label">Dosya</span>
+              <span class="cover-file__number">021</span>
+              <span class="cover-file__stamp">Gizli</span>
+            </div>
+            <div class="game-card__body">
+              <span class="tag tag--live" data-i18n="games.status">Geliştiriliyor</span>
+              <h3 class="game-card__title" lang="tr">Dosya 021</h3>
+              <p data-i18n="games.file.desc">Bir cinayet dosyası ve dağınık kanıtlar. Her ayrıntıyı incele, parçaları birleştir, davayı çöz.</p>
+              <ul class="platforms" data-i18n-attr="aria-label:a11y.platforms" aria-label="Platformlar">
+                <li>Android</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="game-card reveal">
+            <div class="game-card__cover game-card__cover--light" aria-hidden="true">
+              <span class="cover-light__title" lang="en">Afterlight</span>
+            </div>
+            <div class="game-card__body">
+              <span class="tag tag--live" data-i18n="games.status">Geliştiriliyor</span>
+              <h3 class="game-card__title" lang="en">Afterlight</h3>
+              <p data-i18n="games.afterlight.desc">Işıklar söndükten sonra başlayan bir gizem. Karanlık odalarda ipuçlarının peşine düş.</p>
+              <ul class="platforms" data-i18n-attr="aria-label:a11y.platforms" aria-label="Platformlar">
+                <li>Android</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="game-card game-card--locked reveal">
+            <div class="game-card__lock" aria-hidden="true">?</div>
+            <h3 class="game-card__title" data-i18n="games.next.title">Sıradaki dosya</h3>
+            <p data-i18n="games.next.desc">Mühürlü. Şimdilik bu kadarını söyleyebiliriz.</p>
+          </article>
+        </div>
+
+        <p class="games__note reveal" data-i18n="games.ios">
+          <strong>“iOS ne zaman?”</strong>
+          Kazın MacBook'u yok. Kumbara doluyor; dolunca ilk iş App Store'a uçacağız.
+        </p>
+      </div>
+    </section>
+
+    <!-- STÜDYO -->
+    <section class="section section--light" id="studyo" aria-labelledby="studyo-title">
+      <div class="container split">
+        <div class="split__media reveal">
+          <img src="assets/img/studio-logo.webp"
+               data-i18n-attr="alt:studio.imgAlt"
+               alt="Kahve içen Trouble Goose ile Goose Trouble Studio logosu"
+               width="1200" height="800" loading="lazy">
+        </div>
+
+        <div class="split__content reveal">
+          <p class="eyebrow eyebrow--dark" data-i18n="nav.studio">Stüdyo</p>
+          <h2 class="section-title" id="studyo-title" data-i18n="studio.title">Kazın arkasındaki ekip</h2>
+          <p class="section-lead" data-i18n="studio.lead">
+            Gizemi, gerilimi ve “bir ipucu daha” hissini seven küçük bir ekibiz.
+            Oyunlarımızın atmosferi karanlık; kazımız ise her zamanki gibi muzip.
+          </p>
+
+          <ul class="features">
+            <li class="feature">
+              <span class="feature__index">01</span>
+              <div>
+                <h3 data-i18n="studio.f1.title">Mobil için tasarlanır</h3>
+                <p data-i18n="studio.f1.desc">Her vaka Android için baştan kurgulanır: dokun, yakınlaştır, incele, sorgula.</p>
+              </div>
+            </li>
+            <li class="feature">
+              <span class="feature__index">02</span>
+              <div>
+                <h3 data-i18n="studio.f2.title">Karakter odaklı</h3>
+                <p data-i18n="studio.f2.desc">Her oyunda Trouble Goose'un izi var. Tür değişir, kazın karakteri değişmez.</p>
+              </div>
+            </li>
+            <li class="feature">
+              <span class="feature__index">03</span>
+              <div>
+                <h3 data-i18n="studio.f3.title">Oyunun ötesinde</h3>
+                <p data-i18n="studio.f3.desc">İçerik üreticileri ve markalar için pratik web araçları da geliştiririz.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÇEKİLİŞ ARACI -->
+    <section class="section section--dark section--glow" id="cekilis-araci" aria-labelledby="arac-title">
+      <div class="container tool">
+        <div class="tool__content reveal">
+          <span class="tag"><span lang="en">Feedzi</span><span aria-hidden="true">·</span><span data-i18n="tool.tag">Çekiliş aracı</span></span>
+          <h2 class="section-title" id="arac-title" data-i18n="tool.title">Çekilişini yap, kazananı <em>kaz</em> seçsin.</h2>
+          <p class="section-lead" data-i18n="tool.lead">
+            Gönderi linkini yapıştır, kurallarını belirle, kazananı adil ve rastgele seç.
+            Excel yok, ekran kaydı derdi yok, “hileli mi?” tartışması yok.
+          </p>
+
+          <ol class="steps">
+            <li><span data-i18n="tool.step1"><strong>Linki yapıştır.</strong> Çekiliş yaptığın gönderinin bağlantısını ekle.</span></li>
+            <li><span data-i18n="tool.step2"><strong>Kuralları seç.</strong> Etiket sayısı, tekrar eden yorumlar, yedek talihliler.</span></li>
+            <li><span data-i18n="tool.step3"><strong>Kazananı açıkla.</strong> Sonuç ekranını takipçilerinle paylaş.</span></li>
+          </ol>
+
+          <!-- Araç yayına girince href'i gerçek adresle değiştir -->
+          <div class="tool__actions">
+            <a class="btn btn--primary" href="https://feedzi.goosetroublestudio.com" target="_blank" rel="noopener">
+              <span data-i18n="tool.cta">Feedzi'yi aç</span>
+              <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Aracın görünümünü anlatan etkileşimli demo (gerçek veri kullanmaz) -->
+        <div class="mock reveal">
+          <div class="mock__bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <p>feedzi.goosetroublestudio.com</p>
+          </div>
+
+          <div class="mock__body">
+            <div class="mock__field">
+              <small data-i18n="tool.mock.field">Gönderi linki</small>
+              <p>instagram.com/p/Cx8kZ2…</p>
+            </div>
+
+            <ul class="mock__rules" data-i18n-attr="aria-label:a11y.rules" aria-label="Örnek kurallar">
+              <li data-i18n="tool.mock.rule1">En az 2 etiket</li>
+              <li data-i18n="tool.mock.rule2">Tekrarları ele</li>
+              <li data-i18n="tool.mock.rule3">2 yedek talihli</li>
+            </ul>
+
+            <div class="mock__winner" data-picker-card>
+              <img src="assets/img/mascot-badge.webp" alt="" width="600" height="600" loading="lazy">
+              <div>
+                <small data-i18n="tool.mock.winner">Kazanan</small>
+                <strong data-picker-name aria-live="polite">?</strong>
+              </div>
+            </div>
+
+            <button class="btn btn--primary mock__button" type="button" data-picker data-i18n="tool.mock.pick">Kazananı seç</button>
+            <p class="mock__note" data-i18n="tool.mock.note">Bu bir demodur. Gerçek çekiliş için aracı aç.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section class="cta" id="iletisim" aria-labelledby="iletisim-title">
+      <div class="container cta__inner reveal">
+        <div>
+          <h2 class="cta__title" id="iletisim-title" data-i18n="contact.title">Bir fikrin mi var? Kaz dinliyor.</h2>
+          <p data-i18n="contact.lead">İş birlikleri, basın, oyuncu ve araç kullanıcısı geri bildirimleri için bize yaz.</p>
+        </div>
+        <div class="cta__actions">
+          <a class="btn btn--dark" href="mailto:hello@goosetroublestudio.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            hello@goosetroublestudio.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <img class="site-footer__emblem" src="assets/img/gt-emblem.webp" alt="GT Studio" width="350" height="275" loading="lazy">
+
+      <nav data-i18n-attr="aria-label:a11y.footerNav" aria-label="Alt menü">
+        <ul class="site-footer__links">
+          <li><a href="#oyunlar" data-i18n="nav.games">Oyunlar</a></li>
+          <li><a href="#studyo" data-i18n="nav.studio">Stüdyo</a></li>
+          <li><a href="#cekilis-araci" data-i18n="nav.tool">Çekiliş Aracı</a></li>
+          <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <a class="social" href="https://www.instagram.com/goosetroublestudio/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="icon__fill"/></svg>
+      </a>
+    </div>
+    <p class="site-footer__copy container">
+      © <span data-year>2026</span> Goose Trouble Studio. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span>
+    </p>
+  </footer>
+</body>
+</html>
