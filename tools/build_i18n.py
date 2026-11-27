@@ -5,6 +5,8 @@ Sitenin üretilen parçalarını yazar:
 2. Alt sayfaların ortak header/footer'ı: tools/partials/<ad>.html, sayfadaki
    <!-- partial:<ad>:start --> ... <!-- partial:<ad>:end --> arasına yazılır.
 3. sitemap.xml: dil sayfaları + bulunan tüm alt sayfalar (noindex olanlar hariç)
+4. Tüm sayfalarda css/style.css ve js/main.js adreslerine içerik özeti (?v=...):
+   Cloudflare bu dosyaları tarayıcıda saatlerce sakladığı için, değişince adres de değişir.
 
 Kullanım (proje kökünden):
     python tools/build_i18n.py           # üretir
@@ -21,6 +23,7 @@ tamamen üretilir; elle düzenlenmez.
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import re
@@ -253,6 +256,17 @@ def sitemap(pages: list[Path]) -> str:
             f"{urls}\n</urlset>\n")
 
 
+VERSIONED_ASSETS = ["css/style.css", "js/main.js"]
+
+
+def with_asset_versions(text: str) -> str:
+    """css/style.css ve js/main.js adreslerine içeriğin kısa özetini ekler (?v=...)."""
+    for asset in VERSIONED_ASSETS:
+        digest = hashlib.sha256((ROOT / asset).read_bytes()).hexdigest()[:10]
+        text = re.sub(rf'({re.escape(asset)})(\?v=[0-9a-f]+)?"', rf'\g<1>?v={digest}"', text)
+    return text
+
+
 # --------------------------------------------------------------------------
 
 def main() -> int:
@@ -272,6 +286,12 @@ def main() -> int:
         outputs[ROOT / page_path(code) / "index.html"] = render(source, code, strings, missing)
         if missing:
             problems.append(f"{code}: eksik çeviri -> {', '.join(sorted(missing))}")
+
+    # Stil ve betik adreslerine sürüm etiketi: dosya değişince tarayıcılar eski kopyayı kullanmaz.
+    outputs[ROOT / "404.html"] = (ROOT / "404.html").read_text(encoding="utf-8")
+    for path, text in outputs.items():
+        if path.suffix == ".html":
+            outputs[path] = with_asset_versions(text)
 
     stale = [path for path, text in outputs.items()
              if not path.exists() or path.read_text(encoding="utf-8") != text]
