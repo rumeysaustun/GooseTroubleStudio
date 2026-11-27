@@ -961,6 +961,17 @@ h1, h2, h3 {
 .article__footer a { color: var(--orange-hover); }
 .article__more { margin-top: 12px; font-size: 0.9rem; }
 
+/* Hakkımızda */
+.text-link { display: inline-block; margin-top: 32px; font-weight: var(--fw-ui); color: var(--orange-deep); }
+.text-link::after { content: " →"; }
+[dir="rtl"] .text-link::after { content: " ←"; }
+.text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.traits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.traits .how__item h3 { color: var(--orange); }
+.split__media--plain img { box-shadow: none; }
+.section-head--tight { margin-bottom: 32px; }
+@media (max-width: 600px) { .traits { grid-template-columns: 1fr; } }
+
 /* Ana sayfadaki oyun kartından sayfaya bağlantı */
 .game-card__link {
   margin-top: auto;
